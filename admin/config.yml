@@ -1,0 +1,36 @@
+backend:
+  name: github
+  repo: compasTi/compas-viajeros-web
+  branch: develop
+  base_url: https://compasviajeros.com
+  auth_endpoint: /api/auth
+media_folder: media
+public_folder: /media
+locale: es
+publish_mode: editorial_workflow
+collections:
+  - name: destinations
+    label: Destinos
+    description: Agrega, edita, destaca u oculta experiencias de viaje.
+    files:
+      - file: data/destinations.json
+        label: Catálogo de destinos
+        name: catalog
+        format: json
+        fields:
+          - label: Destinos
+            name: items
+            widget: list
+            summary: "{{fields.name}} — {{fields.price}}"
+            fields:
+              - {label: Nombre, name: name, widget: string}
+              - {label: Categoría, name: category, widget: select, options: [playa, naturaleza, aventura, cultura, escapada, experiencia]}
+              - {label: Etiqueta visible, name: label, widget: string}
+              - {label: Fechas, name: dates, widget: string}
+              - {label: Precio, name: price, widget: string}
+              - {label: Duración, name: duration, widget: string}
+              - {label: Descripción, name: description, widget: text}
+              - {label: Imagen, name: image, widget: image}
+              - {label: Texto alternativo, name: alt, widget: string}
+              - {label: Destino destacado, name: featured, widget: boolean, default: false}
+              - {label: Disponible, name: active, widget: boolean, default: true}
