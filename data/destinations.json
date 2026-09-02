@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "dates": "02 al 06 de sep",
+      "active": true,
+      "price": "670.000",
+      "alt": "este es un destino un poco lejos pero lindo",
+      "name": "la pampara para el guainia",
+      "featured": true,
+      "duration": "4 dias 3 noches",
+      "label": "Gainia",
+      "image": "/media/gdg.jpg",
+      "description": "este es un destino de prueba",
+      "category": "aventura"
+    }
+  ]
+}
