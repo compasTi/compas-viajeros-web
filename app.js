@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "573000000000";
+const WHATSAPP_NUMBER = "5730002286553";
 
 const fallbackDestinations = [
   { name:"Capurganá", category:"playa", label:"Playa", dates:"14 al 17 Ago", price:"$950.000", image:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80", alt:"Playa tropical de aguas azules", duration:"4 días / 3 noches", description:"Paisajes increíbles, experiencias únicas y diversión.", featured:true },
