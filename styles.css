@@ -32,7 +32,8 @@ body {
 }
 .brand {
   width: 190px;
-  display: block;
+  display: grid;
+  grid-template-columns: 56px 1fr;
   color: #fff;
   text-decoration: none;
   font-size: 25px;
@@ -42,11 +43,11 @@ body {
 }
 
 .brand-logo {
-  display: block;
-  width: 112px;
-  height: 58px;
+  grid-row: span 2;
+  width: 54px;
+  height: 62px;
   object-fit: contain;
-  background: #fff;
+  background: transparent;
 }
 .brand-mark {
   grid-row: span 2;
@@ -90,6 +91,19 @@ body {
   font-size: 15px;
   cursor: pointer;
   white-space: nowrap;
+}
+
+.wa-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.floating-wa .wa-icon {
+  width: 31px;
+  height: 31px;
+  margin: 0;
 }
 .menu-toggle {
   display: none;
