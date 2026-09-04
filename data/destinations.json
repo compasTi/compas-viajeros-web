@@ -90,6 +90,19 @@
       "image": "/media/gaby.png",
       "description": "esto es una prueba del destino",
       "category": "aventura"
+    },
+    {
+      "dates": "4 al 10 de sept",
+      "active": true,
+      "price": "999.999",
+      "alt": "texto alternativo",
+      "name": "México",
+      "featured": false,
+      "duration": "5 noches / 6 dias",
+      "label": "Aventura",
+      "image": "/media/guania.jfif",
+      "description": "conocer una maravilla del mundo",
+      "category": "aventura"
     }
   ]
 }
