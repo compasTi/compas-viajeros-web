@@ -1,5 +1,20 @@
 const WHATSAPP_NUMBER = "5730002286553";
 
+const fallbackTestimonials = [
+  { name:"Valentina R.", comment:"Una experiencia increíble, todo muy bien organizado, conocí lugares hermosos y hice grandes amigos.", location:"Medellín, Antioquia", image:"https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80", alt:"Viajeros compartiendo una experiencia", active:true },
+  { name:"Juan P.", comment:"Compas Viajeros no es solo viajar, es vivir momentos que se quedan en el corazón.", location:"Bogotá, Cundinamarca", image:"https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=700&q=80", alt:"Viajero disfrutando un destino", active:true },
+  { name:"Daniela M.", comment:"La mejor decisión que tomé, volvería a viajar con ustedes mil veces más.", location:"Pereira, Risaralda", image:"https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?auto=format&fit=crop&w=700&q=80", alt:"Viajera disfrutando sus vacaciones", active:true },
+  { name:"Sebastián G.", comment:"Excelentes guías, destinos increíbles y una energía espectacular en los grupos.", location:"Cali, Valle del Cauca", image:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80", alt:"Grupo de viajeros en un destino", active:true }
+];
+
+const escapeHtml = (value = "") => String(value).replace(/[&<>"']/g, (character) => ({
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#039;"
+}[character]));
+
 const fallbackDestinations = [
   { name:"Capurganá", category:"playa", label:"Playa", dates:"14 al 17 Ago", price:"$950.000", image:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80", alt:"Playa tropical de aguas azules", duration:"4 días / 3 noches", description:"Paisajes increíbles, experiencias únicas y diversión.", featured:true },
   { name:"Desierto de la Tatacoa", category:"aventura", label:"Aventura", dates:"31 Jul al 03 Ago", price:"$750.000", image:"https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=800&q=80", alt:"Paisaje desértico de Colombia", duration:"4 días / 3 noches", description:"Paisajes increíbles, experiencias únicas y diversión.", featured:true },
@@ -20,6 +35,13 @@ const card = (destination) => `
     </div>
   </article>`;
 
+const testimonialCard = (testimonial) => `
+  <article>
+    <div class="test-image" style="background-image: url('${escapeHtml(testimonial.image)}');" role="img" aria-label="${escapeHtml(testimonial.alt)}"></div>
+    <p>“${escapeHtml(testimonial.comment)}”</p>
+    <b>— ${escapeHtml(testimonial.name)}</b><small>⌖ ${escapeHtml(testimonial.location)}</small>
+  </article>`;
+
 const bindWhatsApp = () => document.querySelectorAll("[data-whatsapp]").forEach((link) => {
   link.onclick = () => window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(link.dataset.whatsapp)}`, "_blank", "noopener");
 });
@@ -33,10 +55,20 @@ const render = (destinations) => {
   bindWhatsApp();
 };
 
+const renderTestimonials = (testimonials) => {
+  const testimonialsGrid = document.querySelector("#testimonials-grid");
+  if (testimonialsGrid) testimonialsGrid.innerHTML = testimonials.filter((testimonial) => testimonial.active !== false).map(testimonialCard).join("");
+};
+
 fetch("data/destinations.json")
   .then((response) => response.ok ? response.json() : Promise.reject(new Error("Destinations unavailable")))
   .then((data) => render(data.items || data))
   .catch(() => render(fallbackDestinations));
+
+fetch("data/testimonials.json")
+  .then((response) => response.ok ? response.json() : Promise.reject(new Error("Testimonials unavailable")))
+  .then((data) => renderTestimonials(data.items || data))
+  .catch(() => renderTestimonials(fallbackTestimonials));
 
 document.querySelectorAll("[data-filter]").forEach((button) => button.addEventListener("click", () => {
   document.querySelectorAll("[data-filter]").forEach((item) => item.classList.remove("active"));

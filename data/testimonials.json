@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "name": "Valentina R.",
+      "comment": "Una experiencia increíble, todo muy bien organizado, conocí lugares hermosos y hice grandes amigos.",
+      "location": "Medellín, Antioquia",
+      "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80",
+      "alt": "Viajeros compartiendo una experiencia",
+      "active": true
+    },
+    {
+      "name": "Juan P.",
+      "comment": "Compas Viajeros no es solo viajar, es vivir momentos que se quedan en el corazón.",
+      "location": "Bogotá, Cundinamarca",
+      "image": "https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=700&q=80",
+      "alt": "Viajero disfrutando un destino",
+      "active": true
+    },
+    {
+      "name": "Daniela M.",
+      "comment": "La mejor decisión que tomé, volvería a viajar con ustedes mil veces más.",
+      "location": "Pereira, Risaralda",
+      "image": "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?auto=format&fit=crop&w=700&q=80",
+      "alt": "Viajera disfrutando sus vacaciones",
+      "active": true
+    },
+    {
+      "name": "Sebastián G.",
+      "comment": "Excelentes guías, destinos increíbles y una energía espectacular en los grupos.",
+      "location": "Cali, Valle del Cauca",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80",
+      "alt": "Grupo de viajeros en un destino",
+      "active": true
+    }
+  ]
+}
