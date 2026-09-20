@@ -33,3 +33,23 @@ collections:
               - {label: Texto alternativo, name: alt, widget: string}
               - {label: Destino destacado, name: featured, widget: boolean, default: false}
               - {label: Disponible, name: active, widget: boolean, default: true}
+  - name: testimonials
+    label: Testimonios
+    description: Agrega, edita, activa u oculta testimonios de viajeros.
+    files:
+      - file: data/testimonials.json
+        label: Testimonios de viajeros
+        name: testimonials
+        format: json
+        fields:
+          - label: Testimonios
+            name: items
+            widget: list
+            summary: "{{fields.name}} — {{fields.location}}"
+            fields:
+              - {label: Nombre de la persona, name: name, widget: string}
+              - {label: Comentario, name: comment, widget: text}
+              - {label: Ubicación, name: location, widget: string}
+              - {label: Foto, name: image, widget: image}
+              - {label: Texto alternativo de la foto, name: alt, widget: string}
+              - {label: Mostrar testimonio, name: active, widget: boolean, default: true}
