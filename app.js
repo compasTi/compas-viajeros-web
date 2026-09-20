@@ -31,7 +31,7 @@ const card = (destination) => `
       <h3>${destination.name}</h3>
       <p>${destination.description}</p>
       <div class="travel-meta">▣　${destination.dates}　　☼　${destination.duration}</div>
-      <div class="travel-bottom"><b>Desde<br><strong>${destination.price}</strong></b><a data-whatsapp="Hola, quiero información del viaje a ${destination.name}">Ver más</a></div>
+      <div class="travel-bottom"><b>Desde<br><strong>${destination.price}</strong></b><a data-whatsapp="Hola, quiero información del viaje a ${destination.name}" data-destination="${escapeHtml(destination.name)}">Ver más</a></div>
     </div>
   </article>`;
 
@@ -43,7 +43,14 @@ const testimonialCard = (testimonial) => `
   </article>`;
 
 const bindWhatsApp = () => document.querySelectorAll("[data-whatsapp]").forEach((link) => {
-  link.onclick = () => window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(link.dataset.whatsapp)}`, "_blank", "noopener");
+  link.onclick = () => {
+    window.compasAnalytics?.event("whatsapp_click", {
+      placement: link.className || "link",
+      destination: link.dataset.destination || "general"
+    });
+    window.compasAnalytics?.event("generate_lead", { method: "whatsapp" });
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(link.dataset.whatsapp)}`, "_blank", "noopener");
+  };
 });
 
 const render = (destinations) => {
@@ -71,9 +78,30 @@ fetch("data/testimonials.json")
   .catch(() => renderTestimonials(fallbackTestimonials));
 
 document.querySelectorAll("[data-filter]").forEach((button) => button.addEventListener("click", () => {
+  window.compasAnalytics?.event("destination_filter", { category: button.dataset.filter });
   document.querySelectorAll("[data-filter]").forEach((item) => item.classList.remove("active"));
   button.classList.add("active");
   document.querySelectorAll(".travel-card").forEach((item) => { item.hidden = button.dataset.filter !== "todos" && item.dataset.category !== button.dataset.filter; });
 }));
 
 document.querySelector(".menu-toggle")?.addEventListener("click", () => document.querySelector(".topbar nav").classList.toggle("open"));
+
+document.querySelectorAll("nav a").forEach((link) => link.addEventListener("click", () => {
+  window.compasAnalytics?.event("navigation_click", { label: link.textContent.trim(), destination: link.href });
+}));
+
+document.querySelectorAll("form").forEach((form) => form.addEventListener("submit", () => {
+  window.compasAnalytics?.event("newsletter_submit");
+}));
+
+const trackScrollDepth = () => {
+  let tracked = false;
+  window.addEventListener("scroll", () => {
+    if (!tracked && window.scrollY + window.innerHeight >= document.documentElement.scrollHeight * 0.9) {
+      tracked = true;
+      window.compasAnalytics?.event("scroll", { percent_scrolled: 90 });
+    }
+  }, { passive: true });
+};
+
+trackScrollDepth();
