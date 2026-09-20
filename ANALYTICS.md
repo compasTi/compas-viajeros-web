@@ -5,10 +5,10 @@ La web está preparada para Google Analytics 4 (GA4). Para activarla:
 1. Entra a [Google Analytics](https://analytics.google.com/) con la cuenta del negocio.
 2. Crea una propiedad GA4 y un flujo de datos web para `https://compasviajeros.com`.
 3. Copia el ID de medición, con formato `G-XXXXXXXXXX`.
-4. Reemplaza `G-XXXXXXXXXX` en `analytics.js`.
+4. Reemplaza el valor de `MEASUREMENT_ID` en `analytics.js` por el ID de medición real.
 5. Publica el cambio en `main`.
 
-Mientras el valor sea `G-XXXXXXXXXX`, la web no carga scripts de Google ni envía datos.
+La web solo carga scripts de Google y envía datos cuando `MEASUREMENT_ID` contiene un ID de medición válido.
 
 ## Eventos incluidos
 

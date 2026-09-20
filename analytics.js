@@ -1,4 +1,4 @@
-const MEASUREMENT_ID = "G-XXXXXXXXXX";
+const MEASUREMENT_ID = "G-WV7N2ZKK5F";
 const analyticsEnabled = /^G-[A-Z0-9]+$/.test(MEASUREMENT_ID) && MEASUREMENT_ID !== "G-XXXXXXXXXX";
 
 window.dataLayer = window.dataLayer || [];
