@@ -421,8 +421,12 @@ footer p {
   border-radius: 50%;
   height: 58px;
   width: 58px;
-  text-align: center;
-  padding-top: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 0;
   font-size: 30px;
   z-index: 12;
   cursor: pointer;
