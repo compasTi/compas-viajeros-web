@@ -369,11 +369,41 @@ footer h3 {
 footer p {
   line-height: 1.35;
 }
+.footer-contact,
+.social-links a {
+  color: inherit;
+  text-decoration: none;
+}
+.footer-contact {
+  cursor: pointer;
+}
+.social-links {
+  display: grid;
+  gap: 14px;
+}
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.social-links a:hover,
+.footer-contact:hover {
+  color: var(--green);
+}
+.social-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+.social-icon circle,
+.social-icon rect {
+  fill: none;
+}
 .footer-brand p {
   font-size: 20px;
-}
-.social {
-  font-size: 22px;
 }
 .copyright {
   grid-column: 1/-1;
