@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "5730002286553";
+const WHATSAPP_NUMBER = "573002286553";
 
 const fallbackTestimonials = [
   { name:"Valentina R.", comment:"Una experiencia increíble, todo muy bien organizado, conocí lugares hermosos y hice grandes amigos.", location:"Medellín, Antioquia", image:"https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80", alt:"Viajeros compartiendo una experiencia", active:true },
