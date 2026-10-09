@@ -301,12 +301,8 @@ body {
 .payment-section {
   background: #fff;
 }
-.payment-intro {
-  max-width: 720px;
-  margin: -8px auto 24px;
-  color: #40536b;
-  font-size: 18px;
-  text-align: center;
+.payment-section .section-title {
+  margin-bottom: 24px;
 }
 .payment-grid {
   display: grid;
