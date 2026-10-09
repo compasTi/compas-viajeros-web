@@ -53,6 +53,42 @@ const bindWhatsApp = () => document.querySelectorAll("[data-whatsapp]").forEach(
   };
 });
 
+const revealTargets = [
+  ".section-title",
+  ".mission-card",
+  ".payment-card",
+  ".why-grid article",
+  ".test-grid article",
+  ".travel-card",
+  ".home-cta",
+  ".benefit-strip > b",
+  ".newsletter",
+  ".destination-layout aside",
+  ".results-head",
+  ".destinations-hero > div",
+  "footer > div"
+];
+
+const revealObserver = "IntersectionObserver" in window
+  ? new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("revealed");
+      revealObserver.unobserve(entry.target);
+    }), { threshold: 0.15, rootMargin: "0px 0px -48px" })
+  : null;
+
+const setupReveals = () => {
+  document.querySelectorAll(revealTargets.join(",")).forEach((element) => {
+    if (element.dataset.revealReady) return;
+    element.dataset.revealReady = "true";
+    const position = [...element.parentElement.children].filter((sibling) => sibling.dataset.revealReady).indexOf(element);
+    element.classList.add("reveal");
+    element.style.setProperty("--reveal-delay", `${Math.min(position * 90, 450)}ms`);
+    if (revealObserver) revealObserver.observe(element);
+    else element.classList.add("revealed");
+  });
+};
+
 const render = (destinations) => {
   const activeDestinations = destinations.filter((destination) => destination.active !== false);
   const destinationGrid = document.querySelector("#destination-grid");
@@ -60,11 +96,13 @@ const render = (destinations) => {
   if (destinationGrid) destinationGrid.innerHTML = activeDestinations.map(card).join("");
   if (featuredGrid) featuredGrid.innerHTML = activeDestinations.filter((destination) => destination.featured).slice(0, 6).map(card).join("");
   bindWhatsApp();
+  setupReveals();
 };
 
 const renderTestimonials = (testimonials) => {
   const testimonialsGrid = document.querySelector("#testimonials-grid");
   if (testimonialsGrid) testimonialsGrid.innerHTML = testimonials.filter((testimonial) => testimonial.active !== false).map(testimonialCard).join("");
+  setupReveals();
 };
 
 fetch("data/destinations.json")
@@ -105,3 +143,4 @@ const trackScrollDepth = () => {
 };
 
 trackScrollDepth();
+setupReveals();
