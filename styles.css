@@ -298,6 +298,35 @@ body {
   line-height: 1.35;
   margin: 0 0 10px;
 }
+.payment-section {
+  background: #fff;
+}
+.payment-intro {
+  max-width: 720px;
+  margin: -8px auto 24px;
+  color: #40536b;
+  font-size: 18px;
+  text-align: center;
+}
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.payment-card {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 16px;
+  padding: 22px 14px;
+  display: grid;
+  justify-items: center;
+  gap: 11px;
+  box-shadow: 0 3px 14px #001b3b18;
+}
+.payment-card span {
+  font-weight: 700;
+  font-size: 16px;
+}
 .why {
   background: #fff;
   text-align: center;
@@ -396,8 +425,8 @@ footer {
   color: #fff;
   padding: 35px 5%;
   display: grid;
-  grid-template-columns: 1.1fr 1fr 1fr 1.15fr 1fr;
-  gap: 22px;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  gap: 25px;
 }
 footer h3 {
   color: var(--green);
@@ -439,19 +468,11 @@ footer p {
 .social-icon rect {
   fill: none;
 }
-.payment-list {
-  display: grid;
-  gap: 10px;
-}
-.payment-item {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-}
 .payment-icon {
-  width: 21px;
-  height: 21px;
-  flex: 0 0 21px;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  color: var(--green);
   fill: none;
   stroke: currentColor;
   stroke-width: 1.7;
@@ -461,12 +482,6 @@ footer p {
 .payment-icon rect,
 .payment-icon circle {
   fill: none;
-}
-.payment-methods small {
-  display: block;
-  color: #d7e2ec;
-  margin-top: 12px;
-  line-height: 1.3;
 }
 .footer-brand p {
   font-size: 20px;
@@ -700,6 +715,7 @@ footer p {
     grid-template-columns: repeat(2, 1fr);
   }
   .mission-grid,
+  .payment-grid,
   .why-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
