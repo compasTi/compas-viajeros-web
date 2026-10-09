@@ -760,6 +760,7 @@ footer p {
   opacity: 0;
 }
 .reveal.revealed {
+  opacity: 1;
   animation: reveal-in 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) backwards;
   animation-delay: var(--reveal-delay, 0ms);
 }
