@@ -1,15 +1,15 @@
 {
   "items": [
     {
-      "dates": "14 al 17 Ago",
+      "dates": "Salidas todos los días",
       "active": true,
-      "price": "$950.000",
+      "price": "$1.035.000",
       "alt": "Playa tropical de aguas azules",
       "name": "Capurganá",
       "featured": true,
-      "duration": "4 días / 3 noches",
+      "duration": "2 noches / 3 días",
       "label": "Playa",
-      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+      "image": "/media/capurgana-2.jpg",
       "description": "Paisajes increíbles, experiencias únicas y diversión.",
       "category": "playa"
     },
