@@ -30,7 +30,7 @@ const card = (destination) => `
     <div class="travel-info">
       <h3>${destination.name}</h3>
       <p>${destination.description}</p>
-      <div class="travel-meta">▣　${destination.dates}　　☼　${destination.duration}</div>
+      <div class="travel-meta"><span>▣　${destination.dates}</span><span>☼　${destination.duration}</span></div>
       <div class="travel-bottom"><b>Desde<br><strong>${destination.price}</strong></b><a data-whatsapp="Hola, quiero información del viaje a ${destination.name}" data-destination="${escapeHtml(destination.name)}">Ver más</a></div>
     </div>
   </article>`;
