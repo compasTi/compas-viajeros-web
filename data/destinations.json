@@ -103,6 +103,19 @@
       "image": "/media/boyacá.jpg",
       "description": "Recorre pueblos coloniales, admira paisajes andinos y descubre las tradiciones que hacen único a Boyacá.",
       "category": "cultura"
+    },
+    {
+      "dates": "todos los dias",
+      "active": true,
+      "price": "2000000",
+      "alt": "prueba 2",
+      "name": "Honda",
+      "featured": true,
+      "duration": "4 noches 5 días",
+      "label": "prueba",
+      "image": "/media/gaby.png",
+      "description": "esto es una preuba ",
+      "category": "cultura"
     }
   ]
 }
