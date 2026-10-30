@@ -286,6 +286,9 @@ body {
   margin: 0 0 10px;
 }
 .travel-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   font-size: 13px;
   margin-bottom: 12px;
 }
