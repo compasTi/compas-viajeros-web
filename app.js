@@ -89,6 +89,47 @@ const setupReveals = () => {
   });
 };
 
+const parsePrice = (price = "") => {
+  const digits = String(price).replace(/[^\d]/g, "");
+  return digits ? Number(digits) : null;
+};
+
+const injectDestinationsSchema = (destinations) => {
+  if (!document.querySelector("#destination-grid")) return;
+  const absolute = (url = "") => url.startsWith("http") ? url : `https://compasviajeros.com${url}`;
+  const items = destinations.filter((destination) => destination.active !== false).map((destination, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "TouristTrip",
+      name: destination.name,
+      description: destination.description,
+      image: absolute(destination.image),
+      touristType: destination.tipo === "internacional" ? "Internacional" : "Nacional",
+      itinerary: { "@type": "ItemList", "name": `${destination.duration || ""}`.trim() || destination.name },
+      provider: { "@type": "TravelAgency", name: "Compas Viajeros", url: "https://compasviajeros.com/" },
+      ...(parsePrice(destination.price) && {
+        offers: {
+          "@type": "Offer",
+          price: parsePrice(destination.price),
+          priceCurrency: "COP",
+          availability: "https://schema.org/InStock",
+          url: "https://compasviajeros.com/destinos"
+        }
+      })
+    }
+  }));
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Destinos de Compas Viajeros",
+    itemListElement: items
+  });
+  document.head.appendChild(script);
+};
+
 const render = (destinations) => {
   const activeDestinations = destinations.filter((destination) => destination.active !== false);
   const destinationGrid = document.querySelector("#destination-grid");
@@ -108,8 +149,8 @@ const renderTestimonials = (testimonials) => {
 
 fetch("data/destinations.json")
   .then((response) => response.ok ? response.json() : Promise.reject(new Error("Destinations unavailable")))
-  .then((data) => render(data.items || data))
-  .catch(() => render(fallbackDestinations));
+  .then((data) => { render(data.items || data); injectDestinationsSchema(data.items || data); })
+  .catch(() => { render(fallbackDestinations); injectDestinationsSchema(fallbackDestinations); });
 
 fetch("data/testimonials.json")
   .then((response) => response.ok ? response.json() : Promise.reject(new Error("Testimonials unavailable")))
