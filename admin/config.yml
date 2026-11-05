@@ -23,7 +23,7 @@ collections:
             summary: "{{fields.name}} — {{fields.price}}"
             fields:
               - {label: Nombre, name: name, widget: string}
-              - {label: Categoría, name: category, widget: select, options: [playa, naturaleza, aventura, cultura, escapada, experiencia]}
+              - {label: Categoría, name: category, widget: select, options: [playa, naturaleza, aventura, cultural, escapada, experiencia]}
               - {label: Etiqueta visible, name: label, widget: string}
               - {label: Fechas, name: dates, widget: string}
               - {label: Precio, name: price, widget: string}
