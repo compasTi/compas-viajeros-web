@@ -76,7 +76,7 @@
       "label": "Historia y cultura ancestral",
       "image": "/media/huila.jpg",
       "description": "Déjate sorprender por paisajes fascinantes, cultura ancestral y rincones llenos de historia en el corazón del Huila.",
-      "category": "cultura"
+      "category": "cultural"
     },
     {
       "dates": "Salidas todos los martes",
@@ -102,7 +102,7 @@
       "label": "Pueblos llenos de historia",
       "image": "/media/boyacá.jpg",
       "description": "Recorre pueblos coloniales, admira paisajes andinos y descubre las tradiciones que hacen único a Boyacá.",
-      "category": "cultura"
+      "category": "cultural"
     }
   ]
 }
