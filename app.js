@@ -30,7 +30,7 @@ const card = (destination) => `
     <div class="travel-info">
       <h3>${destination.name}</h3>
       <p>${destination.description}</p>
-      <div class="travel-meta"><span>▣　${destination.dates}</span><span>☼　${destination.duration}</span></div>
+      <div class="travel-meta"><span class="meta-line meta-dates"><svg class="ico" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg>${escapeHtml(destination.dates)}</span><span class="meta-line meta-duration"><svg class="ico" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>${escapeHtml(destination.duration)}</span></div>
       <div class="travel-bottom"><b>Desde<br><strong>${destination.price}</strong></b><a data-whatsapp="Hola, quiero información del viaje a ${destination.name}" data-destination="${escapeHtml(destination.name)}">Ver más</a></div>
     </div>
   </article>`;
