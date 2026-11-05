@@ -11,7 +11,8 @@
       "label": "Paraíso entre selva y mar",
       "image": "/media/capurgana-2.jpg",
       "description": "Playas cristalinas, selva exuberante y rincones mágicos para desconectarte y vivir el Caribe de una forma diferente.",
-      "category": "playa"
+      "category": "playa",
+      "tipo": "nacional"
     },
     {
       "dates": "6 al 8 Noviembre 2026",
@@ -24,7 +25,8 @@
       "label": "Una aventura fuera de lo común",
       "image": "/media/tatacoa.jpg",
       "description": "Explora paisajes rojizos, caminos sorprendentes y escenarios que parecen de otro planeta en una aventura inolvidable.",
-      "category": "aventura"
+      "category": "aventura",
+      "tipo": "nacional"
     },
     {
       "dates": "Salidas todos los martes y viernes",
@@ -37,7 +39,8 @@
       "label": "Montañas, café y tradición",
       "image": "/media/eje-cafetero.jpg",
       "description": "Montañas verdes, cafetales y pueblos encantadores te esperan en una experiencia llena de tradición y naturaleza.",
-      "category": "naturaleza"
+      "category": "naturaleza",
+      "tipo": "nacional"
     },
     {
       "dates": "10 al 13 Jul",
@@ -50,7 +53,8 @@
       "label": "Un encuentro inolvidable",
       "image": "https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=800&q=80",
       "description": "Vive la emoción de observar ballenas jorobadas en libertad y conecta con uno de los espectáculos más fascinantes del océano.",
-      "category": "naturaleza"
+      "category": "naturaleza",
+      "tipo": "nacional"
     },
     {
       "dates": "Salidas todos los miércoles",
@@ -63,7 +67,8 @@
       "label": "Emoción en cada recorrido",
       "image": "/media/santander.jpg",
       "description": "Cañones imponentes, pueblos encantadores y aventuras que convierten cada recorrido en una historia para recordar.",
-      "category": "aventura"
+      "category": "aventura",
+      "tipo": "nacional"
     },
     {
       "dates": "Salidas todos los miércoles",
@@ -76,7 +81,8 @@
       "label": "Historia y cultura ancestral",
       "image": "/media/huila.jpg",
       "description": "Déjate sorprender por paisajes fascinantes, cultura ancestral y rincones llenos de historia en el corazón del Huila.",
-      "category": "cultural"
+      "category": "cultural",
+      "tipo": "nacional"
     },
     {
       "dates": "Salidas todos los martes",
@@ -89,7 +95,8 @@
       "label": "El encanto del sur",
       "image": "/media/sur-de-colombia.jpg",
       "description": "Descubre montañas, lagunas y tradiciones que revelan la riqueza natural y cultural del sur colombiano.",
-      "category": "naturaleza"
+      "category": "naturaleza",
+      "tipo": "nacional"
     },
     {
       "dates": "Salidas todos los miércoles",
@@ -102,7 +109,8 @@
       "label": "Pueblos llenos de historia",
       "image": "/media/boyacá.jpg",
       "description": "Recorre pueblos coloniales, admira paisajes andinos y descubre las tradiciones que hacen único a Boyacá.",
-      "category": "cultural"
+      "category": "cultural",
+      "tipo": "nacional"
     }
   ]
 }
