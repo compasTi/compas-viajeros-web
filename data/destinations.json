@@ -9,10 +9,10 @@
       "featured": true,
       "duration": "2 noches / 3 días",
       "label": "Paraíso entre selva y mar",
+      "tipo": "nacional",
       "image": "/media/capurgana-2.jpg",
       "description": "Playas cristalinas, selva exuberante y rincones mágicos para desconectarte y vivir el Caribe de una forma diferente.",
-      "category": "playa",
-      "tipo": "nacional"
+      "category": "playa"
     },
     {
       "dates": "6 al 8 Noviembre 2026",
@@ -23,10 +23,10 @@
       "featured": true,
       "duration": "1 noche / 2 días ",
       "label": "Una aventura fuera de lo común",
+      "tipo": "nacional",
       "image": "/media/tatacoa.jpg",
       "description": "Explora paisajes rojizos, caminos sorprendentes y escenarios que parecen de otro planeta en una aventura inolvidable.",
-      "category": "aventura",
-      "tipo": "nacional"
+      "category": "aventura"
     },
     {
       "dates": "Salidas todos los martes y viernes",
@@ -37,10 +37,10 @@
       "featured": true,
       "duration": "3 noches / 4 días",
       "label": "Montañas, café y tradición",
+      "tipo": "nacional",
       "image": "/media/eje-cafetero.jpg",
       "description": "Montañas verdes, cafetales y pueblos encantadores te esperan en una experiencia llena de tradición y naturaleza.",
-      "category": "naturaleza",
-      "tipo": "nacional"
+      "category": "naturaleza"
     },
     {
       "dates": "10 al 13 Jul",
@@ -51,10 +51,10 @@
       "featured": false,
       "duration": "4 días / 3 noches",
       "label": "Un encuentro inolvidable",
+      "tipo": "nacional",
       "image": "https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=800&q=80",
       "description": "Vive la emoción de observar ballenas jorobadas en libertad y conecta con uno de los espectáculos más fascinantes del océano.",
-      "category": "naturaleza",
-      "tipo": "nacional"
+      "category": "naturaleza"
     },
     {
       "dates": "Salidas todos los miércoles",
@@ -65,10 +65,10 @@
       "featured": true,
       "duration": "4 noches / 3 días",
       "label": "Emoción en cada recorrido",
-      "image": "/media/santander.jpg",
+      "tipo": "nacional",
+      "image": "/media/santander-b.jpg",
       "description": "Cañones imponentes, pueblos encantadores y aventuras que convierten cada recorrido en una historia para recordar.",
-      "category": "aventura",
-      "tipo": "nacional"
+      "category": "aventura"
     },
     {
       "dates": "Salidas todos los miércoles",
@@ -79,10 +79,10 @@
       "featured": true,
       "duration": "4 noches / 5 días",
       "label": "Historia y cultura ancestral",
+      "tipo": "nacional",
       "image": "/media/huila.jpg",
       "description": "Déjate sorprender por paisajes fascinantes, cultura ancestral y rincones llenos de historia en el corazón del Huila.",
-      "category": "cultural",
-      "tipo": "nacional"
+      "category": "cultural"
     },
     {
       "dates": "Salidas todos los martes",
@@ -93,10 +93,10 @@
       "featured": false,
       "duration": "5 noches / 6 días",
       "label": "El encanto del sur",
+      "tipo": "nacional",
       "image": "/media/sur-de-colombia.jpg",
       "description": "Descubre montañas, lagunas y tradiciones que revelan la riqueza natural y cultural del sur colombiano.",
-      "category": "naturaleza",
-      "tipo": "nacional"
+      "category": "naturaleza"
     },
     {
       "dates": "Salidas todos los miércoles",
@@ -107,10 +107,10 @@
       "featured": false,
       "duration": "4 noches / 5 días",
       "label": "Pueblos llenos de historia",
+      "tipo": "nacional",
       "image": "/media/boyacá.jpg",
       "description": "Recorre pueblos coloniales, admira paisajes andinos y descubre las tradiciones que hacen único a Boyacá.",
-      "category": "cultural",
-      "tipo": "nacional"
+      "category": "cultural"
     }
   ]
 }
