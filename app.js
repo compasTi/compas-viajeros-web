@@ -25,8 +25,8 @@ const fallbackDestinations = [
 ];
 
 const card = (destination) => `
-  <article class="travel-card" data-category="${destination.category}">
-    <div class="travel-image"><img src="${destination.image}" alt="${destination.alt}" loading="lazy"><span>${destination.label}</span></div>
+  <article class="travel-card" data-category="${destination.category}" data-tipo="${destination.tipo || "nacional"}">
+    <div class="travel-image"><img src="${destination.image}" alt="${destination.alt}" loading="lazy"><span>${destination.label}</span>${destination.tipo === "internacional" ? `<i class="badge-intl">Internacional</i>` : ""}</div>
     <div class="travel-info">
       <h3>${destination.name}</h3>
       <p>${destination.description}</p>
@@ -96,6 +96,7 @@ const render = (destinations) => {
   if (destinationGrid) destinationGrid.innerHTML = activeDestinations.map(card).join("");
   if (featuredGrid) featuredGrid.innerHTML = activeDestinations.filter((destination) => destination.featured).slice(0, 6).map(card).join("");
   bindWhatsApp();
+  applyFilters();
   setupReveals();
 };
 
@@ -115,12 +116,46 @@ fetch("data/testimonials.json")
   .then((data) => renderTestimonials(data.items || data))
   .catch(() => renderTestimonials(fallbackTestimonials));
 
+const filters = { category: "todos", tipo: "todos" };
+const applyFilters = () => {
+  let visible = 0;
+  document.querySelectorAll("#destination-grid .travel-card").forEach((item) => {
+    item.hidden = (filters.category !== "todos" && item.dataset.category !== filters.category)
+      || (filters.tipo !== "todos" && item.dataset.tipo !== filters.tipo);
+    if (!item.hidden) visible += 1;
+  });
+  const emptyNote = document.querySelector(".empty-note");
+  if (emptyNote) emptyNote.hidden = visible !== 0;
+};
+
 document.querySelectorAll("[data-filter]").forEach((button) => button.addEventListener("click", () => {
   window.compasAnalytics?.event("destination_filter", { category: button.dataset.filter });
   document.querySelectorAll("[data-filter]").forEach((item) => item.classList.remove("active"));
   button.classList.add("active");
-  document.querySelectorAll(".travel-card").forEach((item) => { item.hidden = button.dataset.filter !== "todos" && item.dataset.category !== button.dataset.filter; });
+  filters.category = button.dataset.filter;
+  applyFilters();
 }));
+
+const setTypeFilter = (tipo, updateUrl = true) => {
+  if (!["todos", "nacional", "internacional"].includes(tipo)) tipo = "todos";
+  filters.tipo = tipo;
+  document.querySelectorAll("[data-type]").forEach((button) => button.classList.toggle("active", button.dataset.type === tipo));
+  applyFilters();
+  if (updateUrl) {
+    const url = new URL(window.location);
+    if (tipo === "todos") url.searchParams.delete("tipo");
+    else url.searchParams.set("tipo", tipo);
+    window.history.replaceState(null, "", url);
+  }
+};
+
+document.querySelectorAll("[data-type]").forEach((button) => button.addEventListener("click", () => {
+  window.compasAnalytics?.event("destination_type_filter", { tipo: button.dataset.type });
+  setTypeFilter(button.dataset.type);
+}));
+
+const initialType = new URLSearchParams(window.location.search).get("tipo");
+if (initialType) setTypeFilter(initialType, false);
 
 document.querySelector(".menu-toggle")?.addEventListener("click", () => document.querySelector(".topbar nav").classList.toggle("open"));
 

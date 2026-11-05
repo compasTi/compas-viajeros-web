@@ -706,6 +706,53 @@ footer p {
 .destination-cards {
   grid-template-columns: repeat(3, 1fr);
 }
+.type-filter {
+  display: inline-flex;
+  gap: 4px;
+  background: #fff;
+  border: 1px solid #ccd5df;
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 14px;
+}
+.type-filter button {
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.type-filter button.active {
+  background: var(--green);
+  color: #fff;
+}
+.travel-image .badge-intl {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: var(--navy);
+  color: #fff;
+  border-radius: 10px;
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: bold;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.empty-note {
+  color: var(--ink);
+  font-size: 15px;
+}
+.empty-note .empty-wa {
+  color: var(--green);
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+}
 .results-head {
   display: flex;
   justify-content: space-between;
