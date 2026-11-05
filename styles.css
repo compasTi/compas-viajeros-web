@@ -286,8 +286,22 @@ body {
   margin: 0 0 10px;
 }
 .travel-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   font-size: 13px;
   margin-bottom: 12px;
+}
+.meta-line {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.meta-line .ico {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  color: var(--green);
 }
 .travel-bottom {
   border-top: 1px solid #d7dce1;
@@ -646,6 +660,9 @@ footer p {
   gap: 7px;
 }
 .category-list button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   border: 0;
   background: none;
   text-align: left;
@@ -654,6 +671,11 @@ footer p {
   font: inherit;
   cursor: pointer;
   border-radius: 9px;
+}
+.category-list button .ico {
+  flex: none;
+  width: 16px;
+  height: 16px;
 }
 .category-list button.active,
 .category-list button:hover {
