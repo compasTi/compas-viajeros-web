@@ -125,6 +125,20 @@
       "image": "/media/enero-2027-2-.png",
       "description": "Descubre la magia de Perú entre antiguas civilizaciones, paisajes sorprendentes y tesoros culturales que te transportarán a otra época.",
       "category": "cultural"
+    },
+    {
+      "dates": "Enero - Febrero",
+      "active": true,
+      "price": "$4.990.000",
+      "alt": "Reflejo del cielo y las montañas sobre las aguas del Salar de Uyuni, en Bolivia.",
+      "name": "Bolivia",
+      "featured": true,
+      "duration": "4 noches / 5 días",
+      "label": "Un viaje a otro mundo",
+      "tipo": "internacional",
+      "image": "/media/enero-2027-1-.png",
+      "description": "Explora escenarios extraordinarios, salares infinitos y paisajes que parecen sacados de otro mundo en el corazón de Sudamérica.",
+      "category": "naturaleza"
     }
   ]
 }
