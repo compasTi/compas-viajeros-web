@@ -111,6 +111,20 @@
       "image": "/media/boyacaa.jpg",
       "description": "Recorre pueblos coloniales, admira paisajes andinos y descubre las tradiciones que hacen único a Boyacá.",
       "category": "cultural"
+    },
+    {
+      "dates": "Salidas todos los lunes, miércoles y viernes",
+      "active": true,
+      "price": "$5.590.000",
+      "alt": "Vista panorámica de Machu Picchu, antigua ciudadela inca rodeada de montañas verdes en Perú.",
+      "name": "Perú",
+      "featured": true,
+      "duration": "5 noches / 6 días",
+      "label": "Tras las huellas del Imperio Inca",
+      "tipo": "nacional",
+      "image": "/media/enero-2027-2-.png",
+      "description": "Descubre la magia de Perú entre antiguas civilizaciones, paisajes sorprendentes y tesoros culturales que te transportarán a otra época.",
+      "category": "cultural"
     }
   ]
 }
